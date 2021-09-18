@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for displays in display %}
+    <h1>{{displays.customer_name}}</h1>
+    <h1>{{displays.contact_no}}</h1>
+    <h1>{{displays.state}}</h1>
+    <h1>{{displays.city}}</h1>
+    <h1>{{displays.check_in}}</h1>
+    {% endfor %}
+{% endblock %}

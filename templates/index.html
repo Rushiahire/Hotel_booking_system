@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Welcome {{request.user.username}}</h1>
+{% if request.user.is_authenticated %}
+    <table>
+        <tr>
+            <th>Sr no</th>
+            <th>Name</th>
+            <th>Contact No</th>
+            <th>State</th>
+            <th>City</th>
+            <th>Check In</th>
+        </tr>
+        {% for details in customer_details %}
+        <tr>
+            <td>{{details.id}}</td>
+            <td>
+                <a href="/customer_details/?customer_id={{details.id}}">
+                    {{details.customer_name}}
+                </a>    
+            </td>
+            <td>{{details.contact_no}}</td>
+            <td>{{details.state}}</td>
+            <td>{{details.city}}</td>
+            <td>{{details.check_in}}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+    {% endif %}
+{% endblock %}

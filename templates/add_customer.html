@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form action="add_customer" method="POST">
+        {% csrf_token %}
+        <label for="">Customer name : {{add_customer.customer_name}} </label>
+        <label for="">Contact no : {{add_customer.contact_no}}</label>
+        <label for="">State : {{add_customer.state}}</label>
+        <label for="">City : {{add_customer.city}}</label>
+        <label for="">Check in : {{add_customer.check_in}} </label>
+        <button type="submit">Add Customer</button>
+
+    </form>
+{% endblock %}
